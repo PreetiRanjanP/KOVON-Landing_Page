@@ -15,7 +15,7 @@ function CultureCard({ title, description, icon: Icon }: CultureValue) {
   return (
     <Card
       sx={{
-        height: "100%",
+        height: "auto", // Changed to auto for better mobile text wrapping
         borderRadius: "16px",
         backgroundColor: "rgba(17, 24, 39, 0.5)",
         border: "1px solid rgba(148, 163, 184, 0.06)",
@@ -29,7 +29,8 @@ function CultureCard({ title, description, icon: Icon }: CultureValue) {
         },
       }}
     >
-      <CardContent className="flex flex-col items-start p-6">
+      {/* Adjusted padding for mobile (xs: 3 vs md: 4) */}
+      <CardContent sx={{ p: { xs: 3, md: 4 }, "&:last-child": { pb: { xs: 3, md: 4 } } }} className="flex flex-col items-start">
         <Box
           className="mb-4 flex items-center justify-center rounded-xl"
           sx={{
@@ -38,6 +39,7 @@ function CultureCard({ title, description, icon: Icon }: CultureValue) {
             background:
               "linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(34, 211, 238, 0.06) 100%)",
             border: "1px solid rgba(99, 102, 241, 0.08)",
+            flexShrink: 0, // Prevents icon from squishing
           }}
         >
           <Icon sx={{ fontSize: 24, color: "#818CF8" }} />
@@ -49,7 +51,7 @@ function CultureCard({ title, description, icon: Icon }: CultureValue) {
           sx={{
             fontWeight: 600,
             color: "#F1F5F9",
-            fontSize: "1.063rem",
+            fontSize: { xs: "1rem", md: "1.063rem" }, // Responsive font size
             mb: 1,
             lineHeight: 1.3,
           }}
@@ -63,6 +65,7 @@ function CultureCard({ title, description, icon: Icon }: CultureValue) {
             color: "#94A3B8",
             lineHeight: 1.7,
             fontSize: "0.875rem",
+            wordBreak: "break-word", // Prevents text overflow on narrow screens
           }}
         >
           {description}
@@ -81,12 +84,13 @@ export default function CultureSection() {
       sx={{
         py: { xs: 8, md: 12 },
         backgroundColor: "#0D1424",
+        overflow: "hidden", // Extra safety against horizontal scroll
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ px: { xs: 3, md: 4 } }}> {/* Increased horizontal padding for mobile */}
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
           {/* Left Content */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid item xs={12} md={6}>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -147,13 +151,14 @@ export default function CultureSection() {
                   fontSize: "0.813rem",
                   border: "1px solid rgba(34, 211, 238, 0.2)",
                   px: 1,
+                  mb: { xs: 2, md: 0 } // Extra margin for mobile stacking
                 }}
               />
             </motion.div>
           </Grid>
 
           {/* Right Cards */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid item xs={12} md={6}>
             <Box className="flex flex-col gap-4">
               {CULTURE_VALUES.map((value, index) => (
                 <motion.div
@@ -162,6 +167,7 @@ export default function CultureSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-30px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  style={{ width: '100%' }}
                 >
                   <CultureCard {...value} />
                 </motion.div>
