@@ -23,7 +23,7 @@ Installation
 Clone the repository:
 
 Bash
-git clone [https://github.com/PreetiRanjanP/KOVON-Landing_Page.git](https://github.com/PreetiRanjanP/KOVON-Landing_Page.git)
+git clone [https://github.com/PreetiRanjanP/KOVON-Landing_Page.git](https://github.com/PreetiRanjanP/KOVON-Landing_Page.git) | 
 cd KOVON-Landing_Page
 Install dependencies:
 
@@ -81,4 +81,5 @@ The project adheres to the mandatory folder structure requirements, ensuring cle
 ├── lib/               # Utility functions and Theme Registry
 ├── styles/            # Global CSS and Tailwind directives
 └── types/             # Strict TypeScript interface definitions ```
+
 
