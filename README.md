@@ -36,19 +36,19 @@ pnpm dev
 Access the local site at http://localhost:3000.
 
 📐 Design Decisions
-Responsiveness
+Responsiveness:- 
 
-Shutterstock
-Implemented a mobile-first design. Key sections like the CultureSection and Footer use responsive MUI Grid breakpoints (xs={12}, md={6}) to ensure seamless transitions from mobile (360px) to desktop (1440px+). We utilized word-break: break-word and dynamic padding to ensure no text overflow on smaller devices.
+Shutterstock:- 
+ Implemented a mobile-first design. Key sections like the CultureSection and Footer use responsive MUI Grid breakpoints (xs={12}, md={6}) to ensure seamless transitions from mobile (360px) to desktop (1440px+). We utilized word-break: break-word and dynamic padding to ensure no text overflow on smaller devices.
 
-Hybrid Styling
-Utilized Tailwind CSS for rapid spacing and utility classes while leveraging MUI’s ThemeRegistry and CacheProvider for professional-grade component behavior and server-side rendering (SSR) compatibility. This allows for high-performance CSS-in-JS without the "flash of unstyled content."
+Hybrid Styling:- 
+ Utilized Tailwind CSS for rapid spacing and utility classes while leveraging MUI’s ThemeRegistry and CacheProvider for professional-grade component behavior and server-side rendering (SSR) compatibility. This allows for high-performance CSS-in-JS without the "flash of unstyled content."
 
-Optimization
-Integrated @vercel/analytics for real-time performance tracking and utilized the Next.js Metadata API to ensure high SEO scores and proper social media preview rendering.
+Optimization:-
+ Integrated @vercel/analytics for real-time performance tracking and utilized the Next.js Metadata API to ensure high SEO scores and proper social media preview rendering.
 
-Accessibility
-Used semantic HTML5 tags (e.g., <main>, <footer>, <nav>) and proper ARIA labels within the Header and Mobile Drawer components to ensure full navigability for screen readers and keyboard users.
+Accessibility:- 
+ Used semantic HTML5 tags (e.g., <main>, <footer>, <nav>) and proper ARIA labels within the Header and Mobile Drawer components to ensure full navigability for screen readers and keyboard users.
 
 © 2026 Kovon Global Private Limited. Built with passion for the global workforce.
 
@@ -81,5 +81,6 @@ The project adheres to the mandatory folder structure requirements, ensuring cle
 ├── lib/               # Utility functions and Theme Registry
 ├── styles/            # Global CSS and Tailwind directives
 └── types/             # Strict TypeScript interface definitions ```
+
 
 
