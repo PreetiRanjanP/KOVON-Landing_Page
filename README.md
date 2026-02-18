@@ -14,24 +14,6 @@ A production-ready, pixel-accurate replication of the [Kovon.io](https://www.kov
 * **Package Manager:** pnpm
 
 ## 📁 Project Structure
-The project adheres to the mandatory folder structure requirements, ensuring clean separation of concerns:
-
-```plaintext
-├── app/               # Next.js App Router (layout, page, globals)
-├── components/        # Section-based components
-│   ├── cta/           # Call to Action banner
-│   ├── culture/       # Culture and values section
-│   ├── features/      # Responsive feature cards
-│   ├── footer/        # Multi-column responsive footer
-│   ├── header/        # Sticky navigation with mobile drawer
-│   ├── hero/          # Animated hero section
-│   ├── how-it-works/  # Step-by-step process guide
-│   └── ui/            # Reusable primitive UI components
-├── constants/         # Static content and link configurations
-├── hooks/             # Custom React hooks (use-mobile, etc.)
-├── lib/               # Utility functions and Theme Registry
-├── styles/            # Global CSS and Tailwind directives
-└── types/             # Strict TypeScript interface definitions
 
 🚀 Getting Started
 Prerequisites
@@ -71,8 +53,8 @@ Used semantic HTML5 tags (e.g., <main>, <footer>, <nav>) and proper ARIA labels 
 © 2026 Kovon Global Private Limited. Built with passion for the global workforce.
 
 
-### Final Step for your Submission
-1.  Open your project in VS Code.
+### Final Step for the Submission
+1.  Open the project in VS Code.
 2.  Create or open the `README.md` file in the root folder.
 3.  Paste the code provided above and save.
 4.  Push the change to your GitHub:
@@ -81,3 +63,22 @@ Used semantic HTML5 tags (e.g., <main>, <footer>, <nav>) and proper ARIA labels 
     git commit -m "docs: finalize README with live URL and design decisions"
     git push origin main
     ```
+
+The project adheres to the mandatory folder structure requirements, ensuring clean separation of concerns:
+```plaintext
+├── app/               # Next.js App Router (layout, page, globals)
+├── components/        # Section-based components
+│   ├── cta/           # Call to Action banner
+│   ├── culture/       # Culture and values section
+│   ├── features/      # Responsive feature cards
+│   ├── footer/        # Multi-column responsive footer
+│   ├── header/        # Sticky navigation with mobile drawer
+│   ├── hero/          # Animated hero section
+│   ├── how-it-works/  # Step-by-step process guide
+│   └── ui/            # Reusable primitive UI components
+├── constants/         # Static content and link configurations
+├── hooks/             # Custom React hooks (use-mobile, etc.)
+├── lib/               # Utility functions and Theme Registry
+├── styles/            # Global CSS and Tailwind directives
+└── types/             # Strict TypeScript interface definitions ```
+
