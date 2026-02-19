@@ -1,89 +1,116 @@
-# KOVON-Landing_Page
+# KOVON | Global Talent Mobility Landing Page
 
-A production-ready, pixel-accurate replication of the [Kovon.io](https://www.kovon.io) homepage. This project demonstrates advanced skills in **Next.js 14+**, **TypeScript**, and professional UI architecture using a hybrid of **Tailwind CSS** and **Material UI (MUI)**.
+[![Built with Next.js](https://img.shields.io/badge/Next.js-14.2+-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+
+
+A high-performance, pixel-accurate re-implementation of the [Kovon.io](https://www.kovon.io) homepage. This project demonstrates production-ready frontend architecture, strict TypeScript enforcement, and a hybrid styling approach using Material UI and Tailwind CSS.
+
+---
 
 ## 🔗 Project Links
-* **Live Demo:** [https://kovon-landing-page-81sv.vercel.app](https://kovon-landing-page-81sv.vercel.app)
+* **Live Deployment:** [https://kovon-landing-page-81sv.vercel.app](https://kovon-landing-page-81sv.vercel.app)
 * **GitHub Repository:** [https://github.com/PreetiRanjanP/KOVON-Landing_Page.git](https://github.com/PreetiRanjanP/KOVON-Landing_Page.git)
 
 ## 🛠️ Tech Stack
-* **Framework:** Next.js 14.2+ (App Router)
-* **Styling:** Tailwind CSS (for layout) & Material UI (for complex components)
-* **Language:** TypeScript (Strict mode, no `any` usage)
-* **Animations:** Framer Motion
-* **Package Manager:** pnpm
+* **Framework:** Next.js 14.2+ (App Router) 
+* **Styling:** Tailwind CSS & Material UI (MUI) 
+* **Language:** TypeScript (Strict Mode, Zero `any` usage) 
+* **State/UI:** Framer Motion (Animations), Radix UI (Primitives) 
+* **Package Manager:** pnpm 
 
-## 📁 Project Structure
+## 📁 Architecture & Folder Structure
+This project strictly follows the mandatory organizational requirements to ensure modularity and scalability:
 
-🚀 Getting Started
+```plaintext
+├── app/               # Next.js App Router (Routing & Metadata)
+├── components/        # Atomic & Sectional Components
+│   ├── header/        # Sticky Nav with Mobile Drawer 
+│   ├── hero/          # Hero Section with Framer Motion 
+│   ├── features/      # Responsive Feature Grid 
+│   ├── culture/       # Values Section with MUI Cards 
+│   ├── how-it-works/  # Step-based process flow 
+│   ├── cta/           # Dynamic CTA Banner 
+│   └── footer/        # Multi-column Responsive Footer 
+├── constants/         # Static Data & Configs (content.ts) 
+├── hooks/             # Custom Logic (use-mobile.ts) 
+├── lib/               # Utility functions & MUI Theme Registry 
+├── types/             # Centralized TS Interfaces 
+└── public/            # Static Optimized Assets
+```
+
+### 🚀 Getting Started
+
 Prerequisites
-Ensure you have Node.js and pnpm installed globally.
 
-Installation
-1. Clone the repository:
+* Node.js: 18.x or higher
 
-Bash
-git clone [https://github.com/PreetiRanjanP/KOVON-Landing_Page.git](https://github.com/PreetiRanjanP/KOVON-Landing_Page.git) | 
-cd KOVON-Landing_Page
+* Package Manager: `pnpm` [Corepack Enabled]
 
+Local Development
+
+1. Clone the project:
+
+```Bash
+git clone https://github.com/PreetiRanjanP/KOVON-Landing_Page.git
+```
 2. Install dependencies:
 
-Bash
+```Bash
 pnpm install
-
+```
 3. Run the development server:
 
-Bash
+```Bash
 pnpm dev
-Access the local site at http://localhost:3000.
-
-📐 Design Decisions
-Responsiveness:- 
-
-Shutterstock:- 
- Implemented a mobile-first design. Key sections like the CultureSection and Footer use responsive MUI Grid breakpoints (xs={12}, md={6}) to ensure seamless transitions from mobile (360px) to desktop (1440px+). We utilized word-break: break-word and dynamic padding to ensure no text overflow on smaller devices.
-
-Hybrid Styling:- 
- Utilized Tailwind CSS for rapid spacing and utility classes while leveraging MUI’s ThemeRegistry and CacheProvider for professional-grade component behavior and server-side rendering (SSR) compatibility. This allows for high-performance CSS-in-JS without the "flash of unstyled content."
-
-Optimization:-
- Integrated @vercel/analytics for real-time performance tracking and utilized the Next.js Metadata API to ensure high SEO scores and proper social media preview rendering.
-
-Accessibility:- 
- Used semantic HTML5 tags (e.g., <main>, <footer>, <nav>) and proper ARIA labels within the Header and Mobile Drawer components to ensure full navigability for screen readers and keyboard users.
-
-© 2026 Kovon Global Private Limited. Built with passion for the global workforce.
+```
+Note: If Port 3000 is occupied, use `pnpm dev --port 3001`
 
 
-### Final Step for the Submission
-1.  Open the project in VS Code.
-2.  Create or open the `README.md` file in the root folder.
-3.  Paste the code provided above and save.
-4.  Push the change to your GitHub:
-    ```bash
-    git add README.md
-    git commit -m "docs: finalize README with live URL and design decisions"
-    git push origin main
-    ```
+---
 
-The project adheres to the mandatory folder structure requirements, ensuring clean separation of concerns:
-```plaintext
-├── app/               # Next.js App Router (layout, page, globals)
-├── components/        # Section-based components
-│   ├── cta/           # Call to Action banner
-│   ├── culture/       # Culture and values section
-│   ├── features/      # Responsive feature cards
-│   ├── footer/        # Multi-column responsive footer
-│   ├── header/        # Sticky navigation with mobile drawer
-│   ├── hero/          # Animated hero section
-│   ├── how-it-works/  # Step-by-step process guide
-│   └── ui/            # Reusable primitive UI components
-├── constants/         # Static content and link configurations
-├── hooks/             # Custom React hooks (use-mobile, etc.)
-├── lib/               # Utility functions and Theme Registry
-├── styles/            # Global CSS and Tailwind directives
-└── types/             # Strict TypeScript interface definitions ```
+## 📐 Design Decisions Explanation
+
+**1. Hybrid Styling Strategy**
 
 
+  * Tailwind CSS: Employed for low-level utility tasks, rapid spacing adjustments, and complex   responsive layouts.
+
+
+
+  * Material UI (MUI): Integrated for high-level interactive components, including the sticky header, mobile drawer menu, and icons.
+
+
+
+* Performance: This combination ensures high performance by using Tailwind's JIT compiler while leveraging MUI's mature component behavior and server-side rendering support.
+
+**2. Mobile-First Responsiveness**
+
+
+* Desktop (1440px+): Implemented a 4-column feature grid and expanded navigation for high-resolution displays.
+
+
+* Tablet: Optimized for intermediate viewports using 2-column card layouts.
+ 
+
+
+* Mobile (360px): Utilized single-column stacking and high-contrast touch targets to prevent overflow and ensure readability on small screens.
+
+
+**3. Strict Type Safety & Clean Architecture**
+
+
+* TypeScript (Zero 'any'): Every component, prop, and data constant is governed by centralized interfaces in types/index.ts.
+
+
+
+* Functional Components: The entire application is built using modern React functional components and hooks.
+
+
+* Modular Folder Structure: Follows the mandatory organizational requirements to isolate concerns between core layout, section-based components, and static constants.
+
+---  
+👨‍💻 Developed By : Preeti Ranjan Pradhan
 
 
